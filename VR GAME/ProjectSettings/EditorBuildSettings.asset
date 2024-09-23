@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
-  m_configObjects: {}
+  m_Scenes:
+  - enabled: 1
+    path: "Assets/Samples/Meta XR Interaction \u200BSDK/68.0.1/Example Scenes/ConcurrentHandsControllersExamples.unity"
+    guid: 10824ac1a08b9a0459de4c071e1db2aa
+  m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: eafc3ba6e175fe74f9e41edb50e443da, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 9460c0a66f321a348af059d3bf0da255, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 48e08538f9a980844b953023139424bd, type: 2}
