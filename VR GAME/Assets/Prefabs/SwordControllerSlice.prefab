@@ -111,6 +111,7 @@ MonoBehaviour:
   velocityEstimator: {fileID: 4670391660325851011}
   crossSectionMaterial: {fileID: 2100000, guid: a4ed9cca9717059468fd058cc64d4306, type: 2}
   cutForce: 2000
+  grabbablePrefab: {fileID: 2171790593060206096, guid: cc6f10f0d3623484bbe8c6d3258ec008, type: 3}
 --- !u!65 &4912553524726465320
 BoxCollider:
   m_ObjectHideFlags: 0

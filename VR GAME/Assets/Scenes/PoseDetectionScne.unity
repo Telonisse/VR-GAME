@@ -1286,10 +1286,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de76f7169412b8f4896235a1585d8939, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _selector: {fileID: 0}
+  _selector: {fileID: 208265526}
   _whenSelected:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 916463183}
+        m_TargetAssemblyTypeName: PoseDetectionTrgger, Assembly-CSharp
+        m_MethodName: thumbsup
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _whenUnselected:
     m_PersistentCalls:
       m_Calls: []
@@ -1305,7 +1317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cd9780be7e512049b4d33d5c9d0ac92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _activeState: {fileID: 0}
+  _activeState: {fileID: 208265527}
 --- !u!114 &208265527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1318,7 +1330,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aebd5da9a8bd22243b407f1927f4965b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _activeStates: []
+  _activeStates:
+  - {fileID: 208265529}
+  - {fileID: 208265528}
   _logicOperator: 0
 --- !u!114 &208265528
 MonoBehaviour:
@@ -1332,15 +1346,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6f9440d09721c849864899e8986e219, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hand: {fileID: 0}
-  _transformFeatureStateProvider: {fileID: 0}
+  _hand: {fileID: 1580991281}
+  _transformFeatureStateProvider: {fileID: 1580991284}
   _transformFeatureConfigs:
-    _values: []
+    _values:
+    - _mode: 0
+      _feature: 0
+      _state: 0
   _transformConfig:
     PositionOffset: {x: 0, y: 0, z: 0}
     RotationOffset: {x: 0, y: 0, z: 0}
-    UpVectorType: 0
-    FeatureThresholds: {fileID: 0}
+    UpVectorType: 2
+    FeatureThresholds: {fileID: 11400000, guid: 039cf5a7424e1e046b79287e9375cf09, type: 2}
 --- !u!114 &208265529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1355,7 +1372,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hand: {fileID: 1580991281}
   _fingerFeatureStateProvider: {fileID: 1580991286}
-  _shapes: []
+  _shapes:
+  - {fileID: 11400000, guid: 55734ff6ac9c48443ab37831fdd69d7b, type: 2}
+  - {fileID: 11400000, guid: b24bfe58d749d144d98a6d242b74fff2, type: 2}
 --- !u!4 &208265530
 Transform:
   m_ObjectHideFlags: 0
@@ -2128,7 +2147,9 @@ PrefabInstance:
       propertyPath: m_modelOculusTouchQuestAndRiftSRightController
       value: 
       objectReference: {fileID: 1103190374}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2483171111766613643, guid: f54012181eacade4ea242c65f804720f, type: 3}
+    - {fileID: 2483171112586171397, guid: f54012181eacade4ea242c65f804720f, type: 3}
     m_RemovedGameObjects:
     - {fileID: 6962110786774176559, guid: f54012181eacade4ea242c65f804720f, type: 3}
     - {fileID: 8496012864676697069, guid: f54012181eacade4ea242c65f804720f, type: 3}
@@ -6248,6 +6269,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 406300005}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &916463182
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 916463184}
+  - component: {fileID: 916463183}
+  m_Layer: 0
+  m_Name: Posedecteiontrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &916463183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916463182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3282c47b963b0634c96341c4f12ccf3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &916463184
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916463182}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &918076125
 GameObject:
   m_ObjectHideFlags: 0
@@ -9866,10 +9931,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de76f7169412b8f4896235a1585d8939, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _selector: {fileID: 0}
+  _selector: {fileID: 1422519876}
   _whenSelected:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 916463183}
+        m_TargetAssemblyTypeName: PoseDetectionTrgger, Assembly-CSharp
+        m_MethodName: thumbsup
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _whenUnselected:
     m_PersistentCalls:
       m_Calls: []
@@ -9885,7 +9962,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cd9780be7e512049b4d33d5c9d0ac92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _activeState: {fileID: 0}
+  _activeState: {fileID: 1422519877}
 --- !u!114 &1422519877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9898,7 +9975,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aebd5da9a8bd22243b407f1927f4965b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _activeStates: []
+  _activeStates:
+  - {fileID: 1422519879}
+  - {fileID: 1422519878}
   _logicOperator: 0
 --- !u!114 &1422519878
 MonoBehaviour:
@@ -9912,15 +9991,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6f9440d09721c849864899e8986e219, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hand: {fileID: 0}
-  _transformFeatureStateProvider: {fileID: 0}
+  _hand: {fileID: 1580991281}
+  _transformFeatureStateProvider: {fileID: 1580991284}
   _transformFeatureConfigs:
-    _values: []
+    _values:
+    - _mode: 0
+      _feature: 0
+      _state: 0
   _transformConfig:
     PositionOffset: {x: 0, y: 0, z: 0}
     RotationOffset: {x: 0, y: 0, z: 0}
-    UpVectorType: 0
-    FeatureThresholds: {fileID: 0}
+    UpVectorType: 2
+    FeatureThresholds: {fileID: 11400000, guid: 039cf5a7424e1e046b79287e9375cf09, type: 2}
 --- !u!114 &1422519879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9933,9 +10015,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08f7cfb1f9629da4494ac0840f3a3cfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hand: {fileID: 0}
-  _fingerFeatureStateProvider: {fileID: 0}
-  _shapes: []
+  _hand: {fileID: 1580991280}
+  _fingerFeatureStateProvider: {fileID: 1580991287}
+  _shapes:
+  - {fileID: 11400000, guid: 55734ff6ac9c48443ab37831fdd69d7b, type: 2}
+  - {fileID: 11400000, guid: b24bfe58d749d144d98a6d242b74fff2, type: 2}
 --- !u!4 &1422519880
 Transform:
   m_ObjectHideFlags: 0
@@ -14804,3 +14888,4 @@ SceneRoots:
   - {fileID: 427328540}
   - {fileID: 208265530}
   - {fileID: 1422519880}
+  - {fileID: 916463184}

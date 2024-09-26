@@ -14,14 +14,13 @@ public class SliceObject : MonoBehaviour
     public VelocityEstimator velocityEstimator;
 
     public Material crossSectionMaterial;
-    public float cutForce = 500;
+    public float cutForce = 4000;
 
     private bool isSlicingEnabled = false;
 
+    public GameObject grabbablePrefab;
 
-    List<Collider> collist;
 
-    
     void OnEnable()
     {
         if (velocityEstimator != null)
@@ -58,7 +57,6 @@ public class SliceObject : MonoBehaviour
     public void Slice(GameObject target)
     {
 
-        
         Vector3 velocity = velocityEstimator.GetVelocityEstimate();
         Vector3 planeNormal = Vector3.Cross(endSlicePoint.position - startSlicePoint.position, velocity);
         planeNormal.Normalize();
@@ -80,32 +78,36 @@ public class SliceObject : MonoBehaviour
     public void SetupSlicedComponent(GameObject slicedObject)
     {
         Rigidbody rb = slicedObject.AddComponent<Rigidbody>();
-        MeshCollider collider = slicedObject.AddComponent<MeshCollider>();
-        MeshRenderer MeshRen = slicedObject.AddComponent<MeshRenderer>();
-        collider.convex = true;
+        MeshCollider meshCollider = slicedObject.AddComponent<MeshCollider>();
+        meshCollider.convex = true;
+
         rb.AddExplosionForce(cutForce, slicedObject.transform.position, 1);
         slicedObject.layer = LayerMask.NameToLayer("Sliceable");
 
-        BoxCollider colliderbox = slicedObject.AddComponent<BoxCollider>();
-        colliderbox.isTrigger = true;
+        BoxCollider boxCollider = slicedObject.AddComponent<BoxCollider>();
+        boxCollider.isTrigger = true; 
+     
+        List<Collider> colliderList = new List<Collider> { meshCollider };
 
-       slicedObject.AddComponent<Grabbable>().InjectOptionalRigidbody(rb);
+        GameObject childObject = Instantiate(grabbablePrefab, slicedObject.transform);
+        childObject.transform.localPosition = Vector3.zero;
+        childObject.transform.localRotation = Quaternion.identity;
 
-      // slicedObject.AddComponent<TouchHandGrabInteractable>();
+        Grabbable grabbable = childObject.GetComponent<Grabbable>();
+        grabbable.InjectOptionalTargetTransform(slicedObject.transform);
+        TouchHandGrabInteractable touchHandGrabInteractable = childObject.GetComponent<TouchHandGrabInteractable>();
 
-        //collist.Add(collider);
-        //slicedObject.GetComponent<TouchHandGrabInteractable>().PointableElement();
+        
+        if (grabbable != null)
+        {
+            grabbable.InjectOptionalRigidbody(rb);
+        }
 
-        //slicedObject.AddComponent<Grabbable>()
+        if (touchHandGrabInteractable != null)
+        {
+            touchHandGrabInteractable.InjectAllTouchHandGrabInteractable(boxCollider, colliderList);
+        }
 
-        //slicedObject.GetComponent<PhysicsGrabbable>().InjectAllPhysicsGrabbable(IPointable pointable, rb);
-
-        //collist.Add(collider);
-
-
-        //slicedObject.GetComponent<PhysicsGrabbable>().InjectPointable(IPointable pointable);
-
-        //slicedObject.GetComponent<PhysicsGrabbable>().
-
+        // META YOURE GREAT MY BESTIE ACTUALLY HJIAGFJKLHGSDHJKFGJKLNBFGSDHJKLÖFGB
     }
 }
